@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.douglasdan.framework</groupId>
+	<artifactId>framework</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>基础框架</description>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<modules>
+		<module>framework-common</module>
+		<module>framework-jdbc</module>
+		<module>framework-mongodb</module>
+		<module>framework-cache</module>
+		<module>framework-lock</module>
+		<module>framework-web</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.locales>zh_CN</project.build.locales>
+		<project.build.jdk>1.8</project.build.jdk>
+		<framework.version>0.1</framework.version>
+		<project.build.jdk>${java.version}</project.build.jdk>
+		<spring.boot.version>2.0.4.RELEASE</spring.boot.version>
+		<spring.cloud.version>Finchley.RELEASE</spring.cloud.version>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<dependencyManagement>
+
+		<dependencies>
+			<!-- spring boot dependencies -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- spring cloud dependencies -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${project.build.jdk}</source>
+					<target>${project.build.jdk}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

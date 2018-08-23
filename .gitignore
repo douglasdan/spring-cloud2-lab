@@ -1,0 +1,8 @@
+*.class
+*.apk
+*.jar
+*.war
+bin/
+target/
+.settings/
+.idea/
